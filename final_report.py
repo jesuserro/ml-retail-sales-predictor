@@ -76,17 +76,17 @@ def generate_html_report(metrics, images_b64, worst_cases_html, output_path="doc
 
         <h2>📈 Gráficas</h2>
         <h3>Predicciones vs Ventas Reales</h3>
-        <img src="data:image/png;base64,{{ scatter }}"/>
+        <img src="data:image/jpg;base64,{{ scatter }}"/>
 
         <h3>Distribución del Error</h3>
-        <img src="data:image/png;base64,{{ error_hist }}"/>
+        <img src="data:image/jpg;base64,{{ error_hist }}"/>
 
         <h3>Correlación</h3>
-        <img src="data:image/png;base64,{{ heatmap }}"/>
+        <img src="data:image/jpg;base64,{{ heatmap }}"/>
 
         {% if importance %}
         <h3>Importancia de Características</h3>
-        <img src="data:image/png;base64,{{ importance }}"/>
+        <img src="data:image/jpg;base64,{{ importance }}"/>
         {% endif %}
 
         <h2>🔍 Casos con mayor error absoluto</h2>
