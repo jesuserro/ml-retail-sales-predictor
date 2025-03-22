@@ -160,9 +160,9 @@ plt.close(fig2)
 
 # Gráfico 3: Heatmap de correlación
 corr = df[['Sales', 'Predicted_Sales', 'error']].corr()
-mask = np.triu(np.ones_like(corr, dtype=bool))
+mask = np.tril(np.ones_like(corr, dtype=bool))  # Mostrar solo la parte inferior
 fig3, ax3 = plt.subplots(figsize=(6, 4))
-sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f", mask=mask, ax=ax3)
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f", mask=~mask, ax=ax3)
 ax3.set_title("Correlación entre Predicción y Real")
 heatmap_b64 = plot_to_base64(fig3, "heatmap_correlation.jpg")
 plt.close(fig3)
