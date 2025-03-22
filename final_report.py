@@ -36,11 +36,18 @@ from weasyprint import HTML
 # FUNCIONES AUXILIARES
 # ========================
 
-def plot_to_base64(fig):
+def plot_to_base64(fig, filename):
+    os.makedirs("img", exist_ok=True)
+    # Guardar imagen como archivo
+    filepath = os.path.join("img", filename)
+    fig.savefig(filepath, format="jpg", bbox_inches="tight")
+    
+    # Convertir a base64
     buf = BytesIO()
-    fig.savefig(buf, format="png", bbox_inches="tight")
+    fig.savefig(buf, format="jpg", bbox_inches="tight")
     buf.seek(0)
     return base64.b64encode(buf.read()).decode('utf-8')
+
 
 def generate_html_report(metrics, images_b64, worst_cases_html, output_path="docs/report.html"):
     html_template = """
@@ -141,14 +148,14 @@ fig1, ax1 = plt.subplots(figsize=(8, 6))
 sns.scatterplot(x='Sales', y='Predicted_Sales', data=df, ax=ax1)
 ax1.plot([df['Sales'].min(), df['Sales'].max()], [df['Sales'].min(), df['Sales'].max()], 'r--')
 ax1.set(title="Predicciones vs Ventas Reales", xlabel="Ventas Reales", ylabel="Ventas Predichas")
-scatter_b64 = plot_to_base64(fig1)
+scatter_b64 = plot_to_base64(fig1, "scatter_real_vs_pred.jpg")
 plt.close(fig1)
 
 # Gráfico 2: Histograma del error
 fig2, ax2 = plt.subplots(figsize=(8, 4))
 sns.histplot(df['error'], kde=True, bins=30, color="orange", ax=ax2)
 ax2.set(title="Distribución del Error de Predicción", xlabel="Error (Real - Predicho)")
-error_b64 = plot_to_base64(fig2)
+error_b64 = plot_to_base64(fig2, "histogram_error.jpg")
 plt.close(fig2)
 
 # Gráfico 3: Heatmap de correlación
@@ -157,7 +164,7 @@ mask = np.triu(np.ones_like(corr, dtype=bool))
 fig3, ax3 = plt.subplots(figsize=(6, 4))
 sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f", mask=mask, ax=ax3)
 ax3.set_title("Correlación entre Predicción y Real")
-heatmap_b64 = plot_to_base64(fig3)
+heatmap_b64 = plot_to_base64(fig3, "heatmap_correlation.jpg")
 plt.close(fig3)
 
 # Gráfico 4: Importancia de variables (si existe el modelo)
@@ -177,7 +184,7 @@ if os.path.exists("sales_model.pkl"):
         sns.barplot(data=feat_imp_df, x='Importance', y='Feature', hue='Feature',
                     dodge=False, legend=False, palette='viridis', ax=ax4)
         ax4.set_title("Importancia de Características (ordenada)")
-        importance_b64 = plot_to_base64(fig4)
+        importance_b64 = plot_to_base64(fig4, "feature_importance.jpg") 
         plt.close(fig4)
     except Exception as e:
         print("⚠️ Error cargando el modelo para importancia de variables:", e)
