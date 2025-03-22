@@ -2,7 +2,7 @@
 
 This project presents a complete workflow for training, evaluating, and reporting a machine learning model that predicts store sales. The output includes a detailed HTML and PDF report with visualizations and metrics, plus saved prediction artifacts.
 
-![](img/scatter_real_vs_pred.jpg)
+![Scatter plot](img/scatter_real_vs_pred.jpg)
 
 ---
 
@@ -57,13 +57,13 @@ python final_report.py
 ## 📊 Sample Plots
 
 ### Predicted vs Actual Sales  
-![Scatter plot](img/scatter_real_vs_pred.png)
+![Scatter plot](img/scatter_real_vs_pred.jpg)
 
 ### Prediction Error Distribution  
-![Error Histogram](img/histogram_error.png)
+![Error Histogram](img/histogram_error.jpg)
 
 ### Feature Importance  
-![Feature Importance](img/feature_importance.png)
+![Feature Importance](img/feature_importance.jpg)
 
 ---
 
