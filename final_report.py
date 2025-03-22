@@ -115,8 +115,8 @@ def generate_html_report(metrics, images_b64, worst_cases_html, output_path="doc
 # ========================
 
 # 1. Predicciones previas (con True_index)
-pred_df = pd.read_csv("3_sales_predictions.csv")
-real_df = pd.read_csv("4_sales_real_solutions.csv")
+pred_df = pd.read_csv("data/3_sales_predictions.csv")
+real_df = pd.read_csv("data/4_sales_real_solutions.csv")
 
 # 2. Unir por True_index
 df = pd.merge(pred_df, real_df, on="True_index", how="inner")
