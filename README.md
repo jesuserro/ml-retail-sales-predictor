@@ -2,6 +2,8 @@
 
 This project presents a complete workflow for training, evaluating, and reporting a machine learning model that predicts store sales. The output includes a detailed HTML and PDF report with visualizations and metrics, plus saved prediction artifacts.
 
+![](img/scatter_real_vs_pred.jpg)
+
 ---
 
 ## 📦 Contents
@@ -21,8 +23,8 @@ This project presents a complete workflow for training, evaluating, and reportin
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ironkaggle-sales-predictor.git
-cd ironkaggle-sales-predictor
+git clone https://github.com/your-username/ml-retail-sales-predictor.git
+cd ml-retail-sales-predictor
 ```
 
 ### 2. (Optional but recommended) Create a virtual environment
