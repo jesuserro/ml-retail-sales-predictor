@@ -10,5 +10,3 @@ __pycache__/
 *.pyz
 .history/
 .vscode/
-sales.csv
-sales_notarget_test_16h.csv
