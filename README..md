@@ -46,6 +46,7 @@ You'll be using the dataset found [here](https://raw.githubusercontent.com/data-
 ### 🕓 16:00 — New Dataset Revealed
 - A **test dataset without the `sales` column** will be shared.
 - Use your trained model to predict sales for this new dataset.
+- <https://raw.githubusercontent.com/data-bootcamp-v4/data/main/ironkaggle_notarget.csv>
 
 ### 🕔 17:00 — Submission Deadline
 - Submit your final predictions.

@@ -11,3 +11,4 @@ __pycache__/
 .history/
 .vscode/
 sales.csv
+sales_notarget_test_16h.csv
