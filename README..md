@@ -1,4 +1,4 @@
-# 🧠 IronKaggle - Final Sales Prediction Report
+# 🧠 Final Sales Prediction Report
 
 This project presents a complete workflow for training, evaluating, and reporting a machine learning model that predicts store sales. The output includes a detailed HTML and PDF report with visualizations and metrics, plus saved prediction artifacts.
 
