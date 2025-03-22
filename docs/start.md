@@ -50,7 +50,7 @@ You'll be using the dataset found [here](https://raw.githubusercontent.com/data-
 
 ### 🕔 17:00 — Submission Deadline
 - Submit your final predictions.
-- Your results will be compared to the actual `sales` values by your LT/TA (found [here](link-to-solution)).
+- Your results will be compared to the actual `sales` values by your LT/TA (found [here]([link-to-solution](https://raw.githubusercontent.com/data-bootcamp-v4/data/main/ironkaggle_solutions.csv))).
 
 ---
 
